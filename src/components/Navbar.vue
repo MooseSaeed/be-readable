@@ -8,13 +8,14 @@
             v-for="(route, index) in maxScene"
             :key="route"
           >
-            <button
+            <router-link
+              :to="route.routeis"
               class="scene_nav_button"
               @click="scene = index"
               :class="{ 'o-active': scene === index }"
             >
               <p>{{ route.title }}</p>
-            </button>
+            </router-link>
           </li>
         </ol>
       </nav>
@@ -27,8 +28,12 @@ export default {
     return {
       scene: 0,
       maxScene: [
-        { index: 1, title: "Live Transcription" },
-        { index: 2, title: "hey" },
+        {
+          index: 1,
+          title: "Live Transcription",
+          routeis: "/livetranscription",
+        },
+        { index: 2, title: "Audio Converter", routeis: "/audoconverter" },
       ],
     };
   },
@@ -74,6 +79,9 @@ export default {
 }
 .scene_nav_button {
   display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
   height: 50px;
   margin: 0;

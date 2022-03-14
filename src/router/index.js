@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Livetranscription from "../views/Livetranscription.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: "/livetranscription",
+    name: "Livetranscription",
+    component: Livetranscription,
   },
 ];
 
