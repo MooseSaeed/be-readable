@@ -11,7 +11,7 @@ export default {
   setup() {
     const startRecording = () => {
       navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-        let mediaRecorder = new mediaRecorder(stream, {
+        const mediaRecorder = new MediaRecorder(stream, {
           mimeType: "audio/webm",
         });
 
@@ -28,7 +28,7 @@ export default {
           mediaRecorder.start(250);
         };
 
-        socket.onmessage = () => {
+        socket.onmessage = (message) => {
           const received = JSON.parse(message.data);
           const transcript = received.channel.alternatives[0].transcript;
           console.log(transcript);
