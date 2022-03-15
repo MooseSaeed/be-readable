@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="text-center font-sans w-96 mx-auto rounded-lg shadow-lg border-solid border-2 p-8"
-  >
-    <h2 class="font-bold text-2xl">Record Audio Message</h2>
+  <div class="flex flex-col justify-center items-center">
+    <h2 class="font-bold text-2xl">Record Audio</h2>
     <div>
       <icon-button
         class="mx-auto h-14 w-14 fill-current text-black cursor-pointer rounded-50 border-2 m-4 p-2"
@@ -17,20 +15,30 @@
         @click="toggleRecording"
       />
     </div>
+
+    <div class="m-0 w-44 overflow-hidden flex">
+      <Soundvisual class="self-start" v-if="!mediaNotSupported" />
+    </div>
+
     <div>{{ recordedTime }}</div>
     <div class="text-sm font-bold">{{ successMessage }}</div>
     <div class="text-sm">{{ instructionMessage }}</div>
     <div class="text-sm text-red-400">{{ errorMessage }}</div>
     <figure class="mt-8">
-      <figcaption class="text-sm mt-2">Listen to your recording.</figcaption>
-      <audio controls :src="recordedAudio" type="audio/mpeg" class="mx-auto">
+      <figcaption class="text-sm mt-2">Listen to your recording</figcaption>
+      <figcaption class="text-sm mt-2">
+        You can download the recording by pressing on the three dots
+      </figcaption>
+      <audio
+        controls
+        :src="recordedAudio"
+        type="audio/mpeg"
+        class="mx-auto w-52"
+      >
         Your browser does not support the
         <code>audio</code> element.
       </audio>
     </figure>
-
-    <p id="status">Not Connected</p>
-    <p id="transcript"></p>
   </div>
 </template>
 
@@ -39,17 +47,13 @@ import IconButton from "./IconButton.vue";
 import SubmitButton from "./SubmitButton.vue";
 import Recorder from "./lib/recorder";
 import convertTimeMMSS from "./lib/utils";
+import Soundvisual from "../../components/Soundvisual.vue";
 
-const INSTRUCTION_MESSAGE = "Click icon to start recording message.";
+const INSTRUCTION_MESSAGE = "Click on the mic icon to start recording.";
 const INSTRUCTION_MESSAGE_STOP = "Click icon again to stop recording.";
 const ERROR_MESSAGE =
   "Failed to use microphone. Please refresh and try again and permit the use of a microphone.";
 const SUCCESS_MESSAGE = "Successfully recorded message!";
-const SUCCESS_MESSAGE_SUBMIT =
-  "Successfully submitted audio message! Thank you!";
-const ERROR_SUBMITTING_MESSAGE =
-  "Error submitting audio message! Please try again later.";
-
 const MP3_FORMAT = "mp3";
 
 export default {
@@ -74,8 +78,10 @@ export default {
       successMessage: null,
       errorMessage: null,
       instructionMessage: INSTRUCTION_MESSAGE,
+      mediaNotSupported: false,
     };
   },
+
   computed: {
     recordedTime() {
       if (this.time && this.recorder?.duration >= this.time * 60) {
@@ -87,7 +93,15 @@ export default {
   components: {
     IconButton,
     SubmitButton,
+    Soundvisual,
   },
+
+  mounted() {
+    if (!navigator.mediaDevices) {
+      this.mediaNotSupported = true;
+    }
+  },
+
   beforeUnmount() {
     if (this.recording) {
       this.stopRecorder();
@@ -132,8 +146,6 @@ export default {
           mediaRecorder.addEventListener("dataavailable", (event) => {
             socket.send(event.data);
           });
-
-          document.querySelector("#status").textContent = "Connected";
 
           mediaRecorder.start(250);
         };

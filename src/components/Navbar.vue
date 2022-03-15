@@ -33,7 +33,6 @@ export default {
           title: "Live Transcription",
           routeis: "/livetranscription",
         },
-        { index: 2, title: "Audio Converter", routeis: "/audoconverter" },
       ],
     };
   },
