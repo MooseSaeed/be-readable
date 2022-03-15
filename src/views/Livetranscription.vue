@@ -1,14 +1,14 @@
 <template>
-  <h1
-    class="my-5 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
-  >
-    Live Transcription
-  </h1>
-  <div class="mx-10 grid grid-cols-2">
-    <aside>
-      <h1 class="text-white text-center text-xl">Tips Card</h1>
+  <div class="grid grid-cols-3 flex-col">
+    <h1
+      class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
+    >
+      Live Transcription
+    </h1>
+    <aside class="col-span-2">
+      <Tipscard />
     </aside>
-    <div class="text-center font-sans rounded-lg gap-5 p-3 flex flex-col">
+    <div class="mr-10 text-center font-sans rounded-lg gap-5 flex flex-col">
       <div>
         <Recorder class="rounded-xl" />
       </div>
@@ -28,10 +28,11 @@
 
 <script>
 import Recorder from "../components/Recorder.vue";
+import Tipscard from "../components/Tipscard.vue";
 
 export default {
   name: "Livetranscription",
-  components: { Recorder },
+  components: { Recorder, Tipscard },
   setup() {
     return {};
   },
