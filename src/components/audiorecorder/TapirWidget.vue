@@ -1,39 +1,39 @@
 <template>
-  <div class="flex flex-col justify-center items-center">
-    <h2 class="font-bold text-2xl">Record Audio</h2>
-    <div>
-      <icon-button
-        class="mx-auto h-14 w-14 fill-current text-black cursor-pointer rounded-50 border-2 m-4 p-2"
-        v-if="recording"
-        name="stop"
-        @click="toggleRecording"
-      />
-      <icon-button
-        class="mx-auto h-14 w-14 fill-current text-black cursor-pointer rounded-50 border-2 m-4 p-2"
-        v-else
-        name="mic"
-        @click="toggleRecording"
-      />
-    </div>
-
-    <div class="m-0 w-44 overflow-hidden flex">
-      <Soundvisual class="self-start" v-if="!mediaNotSupported" />
+  <div class="flex flex-col items-center">
+    <h2 class="font-bold mt-2 text-2xl">Record Audio</h2>
+    <div class="mt-2">
+      <div class="text-sm">{{ instructionMessage }}</div>
+      <div class="flex flex-row items-center justify-center">
+        <icon-button
+          class="mx-auto h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
+          v-if="recording"
+          name="stop"
+          @click="toggleRecording"
+        />
+        <icon-button
+          class="mx-auto h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
+          v-else
+          name="mic"
+          @click="toggleRecording"
+        />
+        <p v-if="mediaNotSupported">
+          Please insure that a microphone is connected to your device.
+        </p>
+        <div v-if="!mediaNotSupported" class="m-0 w-44 overflow-hidden flex">
+          <Soundvisual class="self-start" />
+        </div>
+      </div>
     </div>
 
     <div>{{ recordedTime }}</div>
     <div class="text-sm font-bold">{{ successMessage }}</div>
-    <div class="text-sm">{{ instructionMessage }}</div>
     <div class="text-sm text-red-400">{{ errorMessage }}</div>
-    <figure class="mt-8">
-      <figcaption class="text-sm mt-2">Listen to your recording</figcaption>
-      <figcaption class="text-sm mt-2">
-        You can download the recording by pressing on the three dots
-      </figcaption>
+    <figure>
       <audio
         controls
         :src="recordedAudio"
         type="audio/mpeg"
-        class="mx-auto w-52"
+        class="mx-auto w-60"
       >
         Your browser does not support the
         <code>audio</code> element.
@@ -183,3 +183,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.background-animate {
+  background-size: 400%;
+  -webkit-animation: gradColor 3s ease infinite;
+  -moz-animation: gradColor 3s ease infinite;
+  animation: gradColor 3s ease infinite;
+}
+
+@keyframes gradColor {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+</style>

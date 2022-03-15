@@ -1,9 +1,10 @@
 <template>
-  <div class="fixed bottom-0 left-0 right-0">
-    <Navbar />
-  </div>
-
-  <router-view />
+  <body class="font-sans">
+    <div class="fixed bottom-0 left-0 right-0">
+      <Navbar />
+    </div>
+    <router-view />
+  </body>
 </template>
 
 <script>

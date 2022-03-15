@@ -12,7 +12,7 @@
               :to="route.routeis"
               class="scene_nav_button"
               @click="scene = index"
-              :class="{ 'o-active': scene === index }"
+              :class="{ 'o-active': $route.path === route.routeis }"
             >
               <p>{{ route.title }}</p>
             </router-link>

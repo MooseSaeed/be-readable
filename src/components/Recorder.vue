@@ -1,5 +1,5 @@
 <template>
-  <tapir-widget class="bg-gray-100" :time="2" />
+  <tapir-widget class="bg-purple-500/10 text-white" :time="2" />
 </template>
 
 <script>
