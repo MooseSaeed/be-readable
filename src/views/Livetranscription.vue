@@ -4,21 +4,23 @@
   >
     Live Transcription
   </h1>
-  <div class="grid grid-cols-2 flex-col">
+  <div class="grid lg:grid-cols-2 flex-col">
     <aside class="max-w-3xl justify-self-center self-center">
       <Tipscard />
     </aside>
-    <div class="max-w-lg mr-10 font-sans rounded-lg gap-5 flex flex-col">
+    <div
+      class="lg:mr-10 lg:my-0 w-full lg:w-auto my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
+    >
       <div>
         <Recorder class="rounded-xl" />
       </div>
-      <div class="flex-1">
+      <div class="flex-1 mx-2 xs:mx-10 lg:mx-0">
         <textarea
-          class="border border-gray-400 p-2 w-full rounded-xl"
+          class="border border-gray-400 p-2 w-full rounded-xl h-32 xs:h-auto"
           name="transcript"
           id="transcript"
           placeholder="Your transcript will appear here while recording"
-          cols="30"
+          cols="25"
           rows="8"
         ></textarea>
       </div>
