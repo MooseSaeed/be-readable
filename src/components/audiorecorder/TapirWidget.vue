@@ -16,11 +16,18 @@
           name="mic"
           @click="toggleRecording"
         />
-        <p v-if="mediaNotSupported">
+        <p class="text-sm text-red-500" v-if="mediaNotSupported">
           Please insure that a microphone is connected to your device.
         </p>
-        <div v-if="!mediaNotSupported" class="m-0 w-44 overflow-hidden flex">
-          <Soundvisual class="self-start" />
+
+        <Button v-if="!visualizeAudio" @click="toggleVisual"
+          >Visualize Audio</Button
+        >
+
+        <div v-if="visualizeAudio">
+          <div v-if="!mediaNotSupported" class="m-0 w-44 overflow-hidden flex">
+            <Soundvisual class="self-start" />
+          </div>
         </div>
       </div>
     </div>
@@ -48,6 +55,7 @@ import SubmitButton from "./SubmitButton.vue";
 import Recorder from "./lib/recorder";
 import convertTimeMMSS from "./lib/utils";
 import Soundvisual from "../../components/Soundvisual.vue";
+import Button from "../../components/Button.vue";
 
 const INSTRUCTION_MESSAGE = "Click on the mic icon to start recording.";
 const INSTRUCTION_MESSAGE_STOP = "Click icon again to stop recording.";
@@ -79,6 +87,7 @@ export default {
       errorMessage: null,
       instructionMessage: INSTRUCTION_MESSAGE,
       mediaNotSupported: false,
+      visualizeAudio: false,
     };
   },
 
@@ -94,6 +103,7 @@ export default {
     IconButton,
     SubmitButton,
     Soundvisual,
+    Button,
   },
 
   mounted() {
@@ -116,6 +126,11 @@ export default {
         this.stopRecording();
       }
     },
+
+    toggleVisual() {
+      this.visualizeAudio = !this.visualizeAudio;
+    },
+
     initRecorder() {
       this.recorder = new Recorder({
         micFailed: this.micFailed,
