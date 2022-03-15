@@ -1,14 +1,14 @@
 <template>
-  <div class="grid grid-cols-3 flex-col">
-    <h1
-      class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
-    >
-      Live Transcription
-    </h1>
-    <aside class="col-span-2">
+  <h1
+    class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
+  >
+    Live Transcription
+  </h1>
+  <div class="grid grid-cols-2 flex-col">
+    <aside class="max-w-3xl justify-self-center self-center">
       <Tipscard />
     </aside>
-    <div class="mr-10 text-center font-sans rounded-lg gap-5 flex flex-col">
+    <div class="max-w-lg mr-10 font-sans rounded-lg gap-5 flex flex-col">
       <div>
         <Recorder class="rounded-xl" />
       </div>
@@ -19,7 +19,7 @@
           id="transcript"
           placeholder="Your transcript will appear here while recording"
           cols="30"
-          rows="5"
+          rows="8"
         ></textarea>
       </div>
     </div>

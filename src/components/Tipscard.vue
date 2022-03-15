@@ -5,17 +5,47 @@
     >
       <div class="py-6 px-5 lg:flex">
         <div class="flex-1 flex flex-col justify-between">
-          <header class="mt-8 lg:mt-0">
-            <div class="mt-4 card-info">
-              <h1 class="text-3xl font-bold">Tips Card</h1>
-              <div class="mt-4 text-gray-400 text-xs flex items-center">
-                <div>Published 4448 in</div>
-              </div>
+          <div class="card-info">
+            <h1 class="text-3xl font-bold">How to use</h1>
+            <div class="mt-4 text-gray-400 text-xs flex items-center">
+              <div>Supported by Deepgram</div>
             </div>
-          </header>
+          </div>
 
-          <div class="card-info text-sm mt-4">
-            <p>excerpt</p>
+          <div class="card-info mt-4 text-base">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <li>Connect microphone to your device.</li>
+                  </td>
+                </tr>
+                <tr>
+                  <li>Allow the browser to use your microphone.</li>
+                </tr>
+                <tr>
+                  <li>Click on the mic icon to start recording.</li>
+                </tr>
+                <tr>
+                  <li>
+                    Try to make your words clear and use a good quality
+                    microphone for the best results.
+                  </li>
+                </tr>
+                <tr>
+                  <li>When you finish, press again on the stop icon.</li>
+                </tr>
+                <tr>
+                  <li>Listen to your recording through the audio player.</li>
+                </tr>
+                <tr>
+                  <li>
+                    Download recording by pressing on the three dots within
+                    audio player body.
+                  </li>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -59,7 +89,7 @@ export default {
 }
 
 .card-info {
-  transform: translateY(10%);
+  transform: translateY(5%);
   transition: transform 0.6s 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
