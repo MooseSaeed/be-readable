@@ -33,6 +33,11 @@ export default {
           title: "Live Transcription",
           routeis: "/livetranscription",
         },
+        {
+          index: 2,
+          title: "Live Stream",
+          routeis: "/livestream",
+        },
       ],
     };
   },

@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Livetranscription from "../views/Livetranscription.vue";
+import Livestream from "../views/Livestream.vue";
 
 const routes = [
   {
     path: "/livetranscription",
     name: "Livetranscription",
     component: Livetranscription,
+  },
+  {
+    path: "/livestream",
+    name: "Livestream",
+    component: Livestream,
   },
 ];
 
