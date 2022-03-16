@@ -6,7 +6,34 @@
   </h1>
   <div class="grid lg:grid-cols-2 flex-col">
     <aside class="max-w-3xl justify-self-center self-center">
-      <Tipscard />
+      <Tipscard>
+        <tr>
+          <td>
+            <li>Connect microphone to your device.</li>
+          </td>
+        </tr>
+        <tr>
+          <li>Allow the browser to use your microphone.</li>
+        </tr>
+        <tr>
+          <li>Click on the mic icon to start recording.</li>
+        </tr>
+        <tr>
+          <li>Use a good quality microphone for the best results.</li>
+        </tr>
+        <tr>
+          <li>When you finish, press again on the stop icon.</li>
+        </tr>
+        <tr>
+          <li>Listen to your recording through the audio player.</li>
+        </tr>
+        <tr>
+          <li>
+            Download recording by pressing on the three dots within audio
+            player.
+          </li>
+        </tr>
+      </Tipscard>
     </aside>
     <div
       class="lg:mr-10 lg:my-0 w-full lg:w-auto my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"

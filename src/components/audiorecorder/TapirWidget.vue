@@ -51,7 +51,6 @@
 
 <script>
 import IconButton from "./IconButton.vue";
-import SubmitButton from "./SubmitButton.vue";
 import Recorder from "./lib/recorder";
 import convertTimeMMSS from "./lib/utils";
 import Soundvisual from "../../components/Soundvisual.vue";
@@ -101,7 +100,6 @@ export default {
   },
   components: {
     IconButton,
-    SubmitButton,
     Soundvisual,
     Button,
   },

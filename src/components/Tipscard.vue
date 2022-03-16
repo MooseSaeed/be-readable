@@ -15,32 +15,7 @@
           <div class="card-info mt-4 text-sm md:text-base">
             <table>
               <tbody>
-                <tr>
-                  <td>
-                    <li>Connect microphone to your device.</li>
-                  </td>
-                </tr>
-                <tr>
-                  <li>Allow the browser to use your microphone.</li>
-                </tr>
-                <tr>
-                  <li>Click on the mic icon to start recording.</li>
-                </tr>
-                <tr>
-                  <li>Use a good quality microphone for the best results.</li>
-                </tr>
-                <tr>
-                  <li>When you finish, press again on the stop icon.</li>
-                </tr>
-                <tr>
-                  <li>Listen to your recording through the audio player.</li>
-                </tr>
-                <tr>
-                  <li>
-                    Download recording by pressing on the three dots within
-                    audio player.
-                  </li>
-                </tr>
+                <slot />
               </tbody>
             </table>
           </div>
