@@ -38,7 +38,7 @@
     >
       <div class="p-3 sm:mx-10 mx-2 lg:mx-0 bg-purple-500/10 text-white">
         <div class="flex flex-col items-center">
-          <h2 class="font-bold mt-2 text-2xl">Live Stream Audio</h2>
+          <h2 class="font-bold mt-2 text-2xl">Live Audio Stream</h2>
           <div class="mt-2">
             <div class="flex flex-row items-center justify-center">
               <div
