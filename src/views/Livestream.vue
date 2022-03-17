@@ -38,10 +38,10 @@
       class="lg:my-0 w-full my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
     >
       <div class="p-3 sm:mx-10 mx-2 lg:mx-0 bg-purple-500/10 text-white">
-        <div class="flex flex-col justify-between h-48 items-center">
-          <h2 class="font-bold mt-2 text-2xl">Live Audio Stream</h2>
+        <div class="flex flex-col h-48 justify-center">
+          <h2 class="font-bold mt-2 text-2xl text-center">Live Audio Stream</h2>
           <div class="mt-2">
-            <div class="flex flex-row items-center justify-center">
+            <div class="flex flex-col items-center justify-between">
               <div
                 @click="insertStream"
                 class="m-2 px-4 py-1 rounded-xl fill-current text-white font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate border-2 cursor-pointer"
@@ -49,9 +49,9 @@
                 This one
               </div>
               <input
-                class="p-3 rounded-xl text-sm text-black w-fit"
+                class="px-6 py-3 rounded-xl text-sm text-black w-full"
                 type="text"
-                placeholder="Paste audio live stream link here..."
+                placeholder="Paste audio stream link..."
               />
             </div>
             <figure>
@@ -67,7 +67,10 @@
               </audio>
             </figure>
           </div>
-          <p class="text-sm text-red-500">{{ this.errorMsg }}</p>
+
+          <Flashmessage class="bg-red-500" v-if="errorMsg">
+            {{ this.errorMsg }}
+          </Flashmessage>
         </div>
       </div>
       <div class="flex-1 mx-2 xs:mx-10 lg:mx-0">
@@ -88,10 +91,11 @@
 import { ref } from "vue";
 import Recorder from "../components/Recorder.vue";
 import Tipscard from "../components/Tipscard.vue";
+import Flashmessage from "../components/Flashmessage.vue";
 
 export default {
   name: "Livestream",
-  components: { Recorder, Tipscard },
+  components: { Recorder, Tipscard, Flashmessage },
   data() {
     return {
       errorMsg: null,
