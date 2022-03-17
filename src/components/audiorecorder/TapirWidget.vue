@@ -34,6 +34,27 @@
     </div>
 
     <div>{{ recordedTime }}</div>
+    <select
+      class="rounded-xl text-black m-1 p-1 border-0 shadow-none"
+      name="lang"
+      id="lang"
+    >
+      <option value="en">General English</option>
+      <option value="en-US">United States - English</option>
+      <option value="en-GB">United Kingdom - English</option>
+      <option value="en-AU">Australia - English</option>
+      <option value="en-IN">India - English</option>
+      <option value="en-NZ">New Zealand - English</option>
+      <option value="uk">Ukrainian</option>
+      <option value="fr">French</option>
+      <option value="fr-CA">Canada - French</option>
+      <option value="de">German</option>
+      <option value="ru">Russian</option>
+      <option value="es">Spanish</option>
+      <option value="es-419">Latin America - Spanish</option>
+      <option value="hi">Hindi</option>
+      <option value="nl">Dutch</option>
+    </select>
     <Flashmessage class="bg-green-600" v-if="successMessage">{{
       successMessage
     }}</Flashmessage>
@@ -93,6 +114,7 @@ export default {
       instructionMessage: INSTRUCTION_MESSAGE,
       mediaNotSupported: false,
       visualizeAudio: false,
+      lang: "",
     };
   },
 
@@ -133,10 +155,10 @@ export default {
     },
 
     toggleVisual() {
-      this.errorMessage = ERROR_MESSAGE;
       if (!this.errorMessage) {
         this.visualizeAudio = !this.visualizeAudio;
       } else {
+        this.errorMessage = ERROR_MESSAGE;
       }
     },
 
@@ -161,10 +183,12 @@ export default {
           mimeType: "audio/webm",
         });
 
-        const socket = new WebSocket("wss://api.deepgram.com/v1/listen", [
-          "token",
-          "3a4223f5d972ea4cef3cd118b7d94751b0dd7a93",
-        ]);
+        const language = document.querySelector("select").value;
+
+        const socket = new WebSocket(
+          "wss://api.deepgram.com/v1/listen?language=" + language,
+          ["token", process.env.VUE_APP_DEEPGRAM_KEY]
+        );
 
         socket.onopen = () => {
           mediaRecorder.addEventListener("dataavailable", (event) => {

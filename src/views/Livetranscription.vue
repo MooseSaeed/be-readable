@@ -49,7 +49,7 @@
           id="transcript"
           placeholder="Your transcript will appear here while recording"
           cols="25"
-          rows="8"
+          rows="6"
         ></textarea>
       </div>
     </div>
