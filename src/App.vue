@@ -3,7 +3,7 @@
     <main class="flex-1 max-w-7xl">
       <router-view />
     </main>
-    <footer>
+    <footer class="mt-2">
       <Navbar />
     </footer>
   </div>

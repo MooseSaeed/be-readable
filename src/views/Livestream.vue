@@ -1,11 +1,12 @@
 <template>
-  <h1
-    class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
-  >
-    Live Stream
-  </h1>
-  <div class="grid lg:grid-cols-2 flex-col">
-    <aside class="max-w-3xl justify-self-center self-center">
+  <div class="lg:grid lg:grid-cols-3 flex-col">
+    <h1
+      class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
+    >
+      Live Stream
+    </h1>
+
+    <aside class="col-span-2 max-w-3xl justify-self-center self-center">
       <Tipscard>
         <tr>
           <td>
@@ -34,10 +35,10 @@
       >
     </aside>
     <div
-      class="lg:mr-10 lg:my-0 w-full lg:w-auto my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
+      class="lg:my-0 w-full my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
     >
       <div class="p-3 sm:mx-10 mx-2 lg:mx-0 bg-purple-500/10 text-white">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col justify-between h-48 items-center">
           <h2 class="font-bold mt-2 text-2xl">Live Audio Stream</h2>
           <div class="mt-2">
             <div class="flex flex-row items-center justify-center">
