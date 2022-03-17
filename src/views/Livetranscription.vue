@@ -17,6 +17,9 @@
           <li>Allow the browser to use your microphone.</li>
         </tr>
         <tr>
+          <li>Select the correct language or accent.</li>
+        </tr>
+        <tr>
           <li>Click on the mic icon to start recording.</li>
         </tr>
         <tr>

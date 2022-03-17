@@ -17,8 +17,11 @@
         </tr>
         <tr>
           <p class="bg-gray-800/50 text-center">
-            http://lyd.nrk.no/nrk_radio_alltid_nyheter_aac_h
+            http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
           </p>
+        </tr>
+        <tr>
+          <li>Select the correct language or accent.</li>
         </tr>
         <tr>
           <li>Click on 'This one' button.</li>
@@ -40,7 +43,7 @@
       class="lg:my-0 w-full my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
     >
       <div class="p-3 sm:mx-10 mx-2 lg:mx-0 bg-purple-500/10 text-white">
-        <div class="flex flex-col h-48 justify-center">
+        <div class="flex flex-col min-h-48 justify-center">
           <h2 class="font-bold mt-2 text-2xl text-center">Live Audio Stream</h2>
           <div class="mt-2">
             <div class="flex flex-col items-center justify-between">
@@ -50,11 +53,6 @@
               >
                 This one
               </div>
-              <input
-                class="px-6 py-3 m-2 rounded-xl text-sm text-black w-full"
-                type="text"
-                placeholder="Paste audio stream link..."
-              />
               <select
                 class="rounded-xl text-black m-1 p-1 border-0 shadow-none"
                 name="lang"
@@ -76,6 +74,11 @@
                 <option value="hi">Hindi</option>
                 <option value="nl">Dutch</option>
               </select>
+              <input
+                class="px-6 py-3 m-2 rounded-xl text-sm text-black w-full"
+                type="text"
+                placeholder="Paste audio stream link..."
+              />
             </div>
             <figure>
               <audio

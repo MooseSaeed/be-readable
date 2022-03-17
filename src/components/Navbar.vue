@@ -35,6 +35,12 @@ export default {
         },
         {
           index: 2,
+          title: "Home",
+          routeis: "/",
+        },
+
+        {
+          index: 3,
           title: "Live Stream",
           routeis: "/livestream",
         },
