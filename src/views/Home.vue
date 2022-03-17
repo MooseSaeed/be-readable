@@ -2,48 +2,48 @@
   <div class="flex flex-row h-full justify-center items-center">
     <div>
       <img
-        class="animate__animated animate__bounce animate__slower animate__infinite"
+        class="animate__animated animate__bounce animate__slower animate__repeat-3"
         src="../assets/bereadable.png"
         alt=""
       />
     </div>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-2"
     >
       R
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-2"
     >
       E
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slow animate__repeat-2"
     >
       A
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slow animate__repeat-1"
     >
       D
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slow animate__repeat-1"
     >
       A
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slow animate__repeat-2"
     >
       B
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-2"
     >
       L
     </p>
     <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slower animate__repeat-2"
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-2"
     >
       E
     </p>
