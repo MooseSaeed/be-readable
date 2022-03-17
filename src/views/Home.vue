@@ -1,18 +1,57 @@
 <template>
   <div class="flex flex-row h-full justify-center items-center">
-    <div><img src="../assets/bereadable.png" alt="" /></div>
-    <p class="text-9xl text-white ml-2">R</p>
-    <p class="text-9xl text-white ml-2">E</p>
-    <p class="text-9xl text-white ml-2">A</p>
-    <p class="text-9xl text-white ml-2">D</p>
-    <p class="text-9xl text-white ml-2">A</p>
-    <p class="text-9xl text-white ml-2">B</p>
-    <p class="text-9xl text-white ml-2">L</p>
-    <p class="text-9xl text-white ml-2">E</p>
+    <div>
+      <img
+        class="animate__animated animate__bounce animate__slower animate__infinite"
+        src="../assets/bereadable.png"
+        alt=""
+      />
+    </div>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slower animate__repeat-2"
+    >
+      R
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slower animate__repeat-2"
+    >
+      E
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slower animate__repeat-2"
+    >
+      A
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slower animate__repeat-2"
+    >
+      D
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slower animate__repeat-2"
+    >
+      A
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slower animate__repeat-2"
+    >
+      B
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slower animate__repeat-2"
+    >
+      L
+    </p>
+    <p
+      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slower animate__repeat-2"
+    >
+      E
+    </p>
   </div>
 </template>
 
 <script>
+import "animate.css";
 export default {};
 </script>
 
