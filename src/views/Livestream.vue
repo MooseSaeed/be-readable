@@ -16,7 +16,9 @@
           </td>
         </tr>
         <tr>
-          <li>'http://lyd.nrk.no/nrk_radio_alltid_nyheter_aac_h'</li>
+          <p class="bg-gray-800/50 text-center">
+            http://lyd.nrk.no/nrk_radio_alltid_nyheter_aac_h
+          </p>
         </tr>
         <tr>
           <li>Click on 'This one' button.</li>
@@ -49,7 +51,7 @@
                 This one
               </div>
               <input
-                class="px-6 py-3 rounded-xl text-sm text-black w-full"
+                class="px-6 py-3 m-2 rounded-xl text-sm text-black w-full"
                 type="text"
                 placeholder="Paste audio stream link..."
               />
@@ -67,7 +69,9 @@
               </audio>
             </figure>
           </div>
-
+          <Flashmessage class="bg-red-500" v-if="errorMessage">
+            {{ this.errorMessage }}
+          </Flashmessage>
           <Flashmessage class="bg-red-500" v-if="errorMsg">
             {{ this.errorMsg }}
           </Flashmessage>
@@ -88,6 +92,9 @@
 </template>
 
 <script>
+const ERROR_MESSAGE =
+  "Failed to use microphone. Please insure microphone connected, refresh, try again and permit the use of a microphone.";
+
 import { ref } from "vue";
 import Recorder from "../components/Recorder.vue";
 import Tipscard from "../components/Tipscard.vue";
@@ -96,15 +103,11 @@ import Flashmessage from "../components/Flashmessage.vue";
 export default {
   name: "Livestream",
   components: { Recorder, Tipscard, Flashmessage },
-  data() {
-    return {
-      errorMsg: null,
-    };
-  },
 
   setup() {
     const insertedStream = ref(null);
     const errorMsg = ref(null);
+    const errorMessage = ref(null);
 
     const insertStream = () => {
       const input = document.querySelector("input").value;
@@ -113,41 +116,44 @@ export default {
 
       if (!document.querySelector("input").value) {
         errorMsg.value = ref("Please insert a valid audio stream link!");
-      } else {
-        navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-          const mediaRecorder = new MediaRecorder(stream, {
-            mimeType: "audio/webm",
+      } else if (navigator.mediaDevices.getUserMedia()) {
+        errorMessage.value = ERROR_MESSAGE;
+      }
+
+      navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+        const mediaRecorder = new MediaRecorder(stream, {
+          mimeType: "audio/webm",
+        });
+
+        const socket = new WebSocket("wss://api.deepgram.com/v1/listen", [
+          "token",
+          "3a4223f5d972ea4cef3cd118b7d94751b0dd7a93",
+        ]);
+
+        socket.onopen = () => {
+          mediaRecorder.addEventListener("dataavailable", (event) => {
+            socket.send(event.data);
           });
 
-          const socket = new WebSocket("wss://api.deepgram.com/v1/listen", [
-            "token",
-            "3a4223f5d972ea4cef3cd118b7d94751b0dd7a93",
-          ]);
+          mediaRecorder.start(250);
+        };
 
-          socket.onopen = () => {
-            mediaRecorder.addEventListener("dataavailable", (event) => {
-              socket.send(event.data);
-            });
-
-            mediaRecorder.start(250);
-          };
-
-          socket.onmessage = (message) => {
-            const received = JSON.parse(message.data);
-            const transcript = received.channel.alternatives[0].transcript;
-            if (transcript && received.is_final) {
-              document.querySelector("#transcript").textContent +=
-                transcript + " ";
-            }
-          };
-        });
-      }
+        socket.onmessage = (message) => {
+          const received = JSON.parse(message.data);
+          const transcript = received.channel.alternatives[0].transcript;
+          if (transcript && received.is_final) {
+            document.querySelector("#transcript").textContent +=
+              transcript + " ";
+          }
+        };
+      });
     };
 
     return {
       insertStream,
       insertedStream,
       errorMsg,
+      errorMessage,
     };
   },
 };

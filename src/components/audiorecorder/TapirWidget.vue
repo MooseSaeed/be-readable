@@ -34,7 +34,7 @@
     </div>
 
     <div>{{ recordedTime }}</div>
-    <Flashmessage class="bg-red-500" v-if="successMessage">{{
+    <Flashmessage class="bg-green-600" v-if="successMessage">{{
       successMessage
     }}</Flashmessage>
     <Flashmessage class="bg-red-500" v-if="errorMessage">{{
