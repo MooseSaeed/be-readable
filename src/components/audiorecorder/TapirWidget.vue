@@ -16,9 +16,10 @@
           name="mic"
           @click="toggleRecording"
         />
-        <p class="text-sm text-red-500" v-if="mediaNotSupported">
-          Please insure that a microphone is connected to your device.
-        </p>
+
+        <Flashmessage class="bg-red-500" v-if="mediaNotSupported">
+          Please insure that a microphone is connected to your device
+        </Flashmessage>
 
         <Button v-if="!visualizeAudio" @click="toggleVisual"
           >Visualize Audio</Button
