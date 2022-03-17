@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-audio-tapir": "^1.2.0",
