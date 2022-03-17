@@ -33,8 +33,12 @@
     </div>
 
     <div>{{ recordedTime }}</div>
-    <div class="text-sm font-bold">{{ successMessage }}</div>
-    <div class="text-sm text-red-400 mb-2">{{ errorMessage }}</div>
+    <Flashmessage class="bg-red-500" v-if="successMessage">{{
+      successMessage
+    }}</Flashmessage>
+    <Flashmessage class="bg-red-500" v-if="errorMessage">{{
+      errorMessage
+    }}</Flashmessage>
     <figure>
       <audio
         controls
@@ -55,6 +59,7 @@ import Recorder from "./lib/recorder";
 import convertTimeMMSS from "./lib/utils";
 import Soundvisual from "../../components/Soundvisual.vue";
 import Button from "../../components/Button.vue";
+import Flashmessage from "../../components/Flashmessage.vue";
 
 const INSTRUCTION_MESSAGE = "Click on the mic icon to start recording.";
 const INSTRUCTION_MESSAGE_STOP = "Click icon again to stop recording.";
@@ -102,6 +107,7 @@ export default {
     IconButton,
     Soundvisual,
     Button,
+    Flashmessage,
   },
 
   mounted() {
@@ -127,7 +133,10 @@ export default {
 
     toggleVisual() {
       this.errorMessage = ERROR_MESSAGE;
-      this.visualizeAudio = !this.visualizeAudio;
+      if (!this.errorMessage) {
+        this.visualizeAudio = !this.visualizeAudio;
+      } else {
+      }
     },
 
     initRecorder() {
