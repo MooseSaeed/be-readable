@@ -34,7 +34,7 @@
 
     <div>{{ recordedTime }}</div>
     <div class="text-sm font-bold">{{ successMessage }}</div>
-    <div class="text-sm text-red-400">{{ errorMessage }}</div>
+    <div class="text-sm text-red-400 mb-2">{{ errorMessage }}</div>
     <figure>
       <audio
         controls
@@ -59,7 +59,7 @@ import Button from "../../components/Button.vue";
 const INSTRUCTION_MESSAGE = "Click on the mic icon to start recording.";
 const INSTRUCTION_MESSAGE_STOP = "Click icon again to stop recording.";
 const ERROR_MESSAGE =
-  "Failed to use microphone. Please refresh and try again and permit the use of a microphone.";
+  "Failed to use microphone. Please insure microphone connected, refresh, try again and permit the use of a microphone.";
 const SUCCESS_MESSAGE = "Successfully recorded message!";
 const MP3_FORMAT = "mp3";
 
@@ -126,6 +126,7 @@ export default {
     },
 
     toggleVisual() {
+      this.errorMessage = ERROR_MESSAGE;
       this.visualizeAudio = !this.visualizeAudio;
     },
 
