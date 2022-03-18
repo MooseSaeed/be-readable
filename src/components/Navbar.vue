@@ -69,6 +69,7 @@ export default {
 }
 .scene_nav_list {
   display: flex;
+
   margin: 0;
   padding: 0;
   transform: scaleY(0.6);
@@ -110,5 +111,13 @@ export default {
 }
 .scene_nav_button:hover {
   background: #64fafa;
+}
+@media screen and (max-width: 576px) {
+  .scene_nav_list {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>
