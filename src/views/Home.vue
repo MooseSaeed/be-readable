@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row h-full justify-center items-center mx-10 my-20">
+  <div class="flex flex-row h-full justify-center items-center mx-10 my-52">
     <div>
       <img
         class="w-20 sm:w-28 lg:w-40 animate__animated animate__bounce animate__slower animate__repeat-2"

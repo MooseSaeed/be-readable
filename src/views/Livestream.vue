@@ -17,8 +17,8 @@
         </tr>
         <tr>
           <li>
-            <p class="bg-gray-800/50 text-center">
-              http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
+            <p class="bg-gray-800/50 text-center inline-block">
+              http://stream.live.vc.bbcmedia.co.uk/<br />bbc_radio_fourlw_online_nonuk
             </p>
           </li>
         </tr>
@@ -38,8 +38,8 @@
           <li>
             Insure microphone is close to the speakers while stream is playing.
           </li>
-        </tr></Tipscard
-      >
+        </tr>
+      </Tipscard>
     </aside>
     <div
       class="lg:my-0 my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col justify-center items-center"

@@ -6,7 +6,7 @@
       Live Transcription
     </h1>
 
-    <aside class="col-span-2 max-w-3xl justify-self-center self-center mx-24">
+    <aside class="col-span-2 max-w-3xl justify-self-center self-center mx-14">
       <Tipscard>
         <tr>
           <td>
