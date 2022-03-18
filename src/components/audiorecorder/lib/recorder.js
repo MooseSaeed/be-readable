@@ -1,7 +1,8 @@
 /* eslint-disable */
-import Mp3Encoder from './mp3-encoder';
-import WavEncoder from './wav-encoder';
-import convertTimeMMSS from './utils';
+import Mp3Encoder from "./mp3-encoder";
+import WavEncoder from "./wav-encoder";
+import convertTimeMMSS from "./utils";
+import "../../../../node_modules/lamejs/src/js/MPEGMode.js";
 
 export default class {
   constructor(options = {}) {
@@ -39,7 +40,7 @@ export default class {
       },
     };
 
-    this.beforeRecording && this.beforeRecording('start recording');
+    this.beforeRecording && this.beforeRecording("start recording");
 
     navigator.mediaDevices
       .getUserMedia(constraints)
@@ -94,7 +95,7 @@ export default class {
     this._duration = this.duration;
     this.isPause = true;
 
-    this.pauseRecording && this.pauseRecording('pause recording');
+    this.pauseRecording && this.pauseRecording("pause recording");
   }
 
   recordList() {
@@ -126,7 +127,9 @@ export default class {
         sum += sample[i] * sample[i];
       }
 
-      this.duration = parseFloat(this._duration) + parseFloat(this.context.currentTime.toFixed(2));
+      this.duration =
+        parseFloat(this._duration) +
+        parseFloat(this.context.currentTime.toFixed(2));
       this.volume = Math.sqrt(sum / sample.length).toFixed(2);
     };
 
@@ -139,6 +142,6 @@ export default class {
   }
 
   _isMp3() {
-    return this.format.toLowerCase() === 'mp3';
+    return this.format.toLowerCase() === "mp3";
   }
 }

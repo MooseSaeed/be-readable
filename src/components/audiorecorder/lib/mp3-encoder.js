@@ -1,5 +1,6 @@
 /* eslint-disable */
-import { Mp3Encoder } from 'lamejs';
+import "../../../../node_modules/lamejs/src/js/MPEGMode.js";
+import { Mp3Encoder } from "lamejs";
 
 export default class {
   constructor(config) {
@@ -25,7 +26,7 @@ export default class {
 
   finish() {
     this.dataBuffer.push(this.encoder.flush());
-    const blob = new Blob(this.dataBuffer, { type: 'audio/mp3' });
+    const blob = new Blob(this.dataBuffer, { type: "audio/mp3" });
     this.dataBuffer = [];
 
     return {
