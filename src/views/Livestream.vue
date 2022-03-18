@@ -16,11 +16,9 @@
           </td>
         </tr>
         <tr>
-          <li>
-            <p class="bg-gray-800/50 text-center inline-block">
-              http://stream.live.vc.bbcmedia.co.uk/<br />bbc_radio_fourlw_online_nonuk
-            </p>
-          </li>
+          <p class="bg-gray-800/50 text-center inline-block text-xs">
+            http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
+          </p>
         </tr>
         <tr>
           <li>Select the correct language or accent.</li>
@@ -108,7 +106,7 @@
           class="border border-gray-400 p-2 w-full rounded-xl h-32 xs:h-auto"
           name="transcript"
           id="transcript"
-          placeholder="Your transcript will appear here while recording"
+          placeholder="Your transcription will appear here while recording"
           cols="25"
           rows="8"
         ></textarea>

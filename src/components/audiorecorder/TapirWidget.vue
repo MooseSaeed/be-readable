@@ -221,6 +221,7 @@ export default {
       if (this.afterRecording) {
         this.afterRecording();
       }
+      this.visualizeAudio = false;
     },
 
     micFailed() {

@@ -50,7 +50,7 @@
           class="border border-gray-400 p-2 rounded-xl"
           name="transcript"
           id="transcript"
-          placeholder="Your transcript will appear here while recording"
+          placeholder="Your transcription will appear here while recording"
           cols="30"
           rows="6"
         ></textarea>
