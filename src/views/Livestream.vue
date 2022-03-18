@@ -1,12 +1,12 @@
 <template>
-  <div class="lg:grid lg:grid-cols-3 flex-col">
+  <div class="lg:grid lg:grid-cols-3 flex flex-col justify-center items-center">
     <h1
       class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
     >
       Live Stream
     </h1>
 
-    <aside class="col-span-2 max-w-3xl justify-self-center self-center">
+    <aside class="col-span-2 max-w-3xl justify-self-center self-center mx-24">
       <Tipscard>
         <tr>
           <td>
@@ -16,9 +16,11 @@
           </td>
         </tr>
         <tr>
-          <p class="bg-gray-800/50 text-center">
-            http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
-          </p>
+          <li>
+            <p class="bg-gray-800/50 text-center">
+              http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
+            </p>
+          </li>
         </tr>
         <tr>
           <li>Select the correct language or accent.</li>
@@ -40,7 +42,7 @@
       >
     </aside>
     <div
-      class="lg:my-0 w-full my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col lg:justify-self-auto justify-self-center mx xs:mx-5 lg:mx-0"
+      class="lg:my-0 my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col justify-center items-center"
     >
       <div class="p-3 sm:mx-10 mx-2 lg:mx-0 bg-purple-500/10 text-white">
         <div class="flex flex-col min-h-48 justify-center">

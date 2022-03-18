@@ -1,52 +1,54 @@
 <template>
-  <div class="flex flex-row h-full justify-center items-center">
+  <div class="flex flex-row h-full justify-center items-center mx-10">
     <div>
       <img
-        class="animate__animated animate__bounce animate__slower animate__repeat-3"
+        class="w-20 sm:w-28 lg:w-40 animate__animated animate__bounce animate__slower animate__repeat-2"
         src="../assets/bereadable.png"
         alt=""
       />
     </div>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-2"
-    >
-      R
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-2"
-    >
-      E
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slow animate__repeat-2"
-    >
-      A
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slow animate__repeat-1"
-    >
-      D
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-5s animate__slow animate__repeat-1"
-    >
-      A
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-4s animate__slow animate__repeat-2"
-    >
-      B
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-2"
-    >
-      L
-    </p>
-    <p
-      class="text-9xl text-white ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-2"
-    >
-      E
-    </p>
+    <div class="flex flex-row text-4xl sm:text-6xl lg:text-9xl ml-2">
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__slow animate__repeat-1"
+      >
+        R
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-1s animate__slow animate__repeat-1"
+      >
+        E
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-1"
+      >
+        A
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-1"
+      >
+        D
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-3s animate__slow animate__repeat-1"
+      >
+        A
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-2s animate__slow animate__repeat-1"
+      >
+        B
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__delay-1s animate__slow animate__repeat-1"
+      >
+        L
+      </p>
+      <p
+        class="text-white sm:ml-2 animate__animated animate__swing animate__slow animate__repeat-1"
+      >
+        E
+      </p>
+    </div>
   </div>
 </template>
 

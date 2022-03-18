@@ -1,5 +1,5 @@
 <template>
-  <Card class="rounded-xl mx-2 sm:mx-10">
+  <Card class="rounded-xl">
     <article
       class="post-card text-white dark:hover:bg-blue-50 dark:hover:bg-none dark:text-black transition-all duration-1000 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl"
     >
@@ -7,7 +7,7 @@
         <div class="flex-1 flex flex-col justify-between">
           <div class="card-info">
             <h1 class="text-3xl font-bold">How to use</h1>
-            <div class="mt-4 text-gray-400 text-xs flex items-center">
+            <div class="mt-4 mx text-gray-400 text-xs">
               <div>Supported by Deepgram</div>
             </div>
           </div>
