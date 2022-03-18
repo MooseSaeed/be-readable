@@ -11,7 +11,7 @@
         <Component :is="Component" />
       </transition>
     </router-view>
-    <footer class="mt-2 md:fixed md:bottom-0">
+    <footer class="mt-2 sm:fixed sm:bottom-0">
       <Navbar />
     </footer>
   </main>
