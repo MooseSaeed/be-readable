@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center">
-    <h2 class="font-bold mt-2 text-2xl">Record Audio</h2>
+    <h2 class="font-bold mt-2 text-2xl">Record Audioo</h2>
     <div class="mt-2">
       <div class="text-sm">{{ instructionMessage }}</div>
       <div class="flex flex-row items-center justify-center">
