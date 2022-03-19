@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TapirWidget from "vue-audio-tapir/src/components/TapirWidget.vue";
+import TapirWidget from "../../node_modules/vue-audio-tapir/src/components/TapirWidget.vue";
 import "vue-audio-tapir/dist/vue-audio-tapir.css";
 export default {
   name: "App",
