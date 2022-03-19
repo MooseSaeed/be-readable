@@ -9,7 +9,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
-    "lamejs": "^1.2.0",
+    "lamejs": "github:MooseSaeed/lamejs",
     "vue": "^3.0.0",
     "vue-audio-visual": "^2.4.1",
     "vue-router": "^4.0.0-0"
