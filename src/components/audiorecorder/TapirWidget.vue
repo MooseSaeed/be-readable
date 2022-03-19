@@ -5,13 +5,13 @@
       <div class="text-sm">{{ instructionMessage }}</div>
       <div class="flex flex-row items-center justify-center">
         <icon-button
-          class="mx-auto h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
+          class="mx-auto rounded-full h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
           v-if="recording"
           name="stop"
           @click="toggleRecording"
         />
         <icon-button
-          class="mx-auto h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
+          class="mx-auto rounded-full h-14 w-14 fill-current text-black bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate cursor-pointer rounded-50 border-2 m-4 p-2"
           v-else
           name="mic"
           @click="toggleRecording"
