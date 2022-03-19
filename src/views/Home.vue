@@ -7,7 +7,7 @@
         alt=""
       />
     </div>
-    <div class="flex flex-row text-4xl sm:text-6xl lg:text-9xl ml-2">
+    <div class="flex flex-row text-4xl sm:text-6xl lg:text-9xl ml-3">
       <p
         class="text-white sm:ml-2 animate__animated animate__flash animate__faster"
       >
