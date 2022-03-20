@@ -32,11 +32,8 @@
           <li>Allow browser to use your microphone.</li>
         </tr>
         <tr>
-          <li>Use a good quality microphone for the best results.</li>
-        </tr>
-        <tr>
           <li>
-            Insure microphone is close to the speakers while stream is playing.
+            For this to work, you'll need a speaker to be the source of audio.
           </li>
         </tr>
       </Tipscard>
