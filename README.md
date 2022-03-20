@@ -5,7 +5,7 @@
     <img alt="License: apache--2 permissive license" src="https://img.shields.io/badge/License-apache--2 permissive license-yellow.svg" />
   </a>
   <a href="https://twitter.com/Moose\_Said" target="_blank">
-    <img alt="Twitter: Moose\_Said" src="https://img.shields.io/twitter/follow/Moose\_Said.svg?style=social" />
+    <img alt="Twitter: Moose\_Said" src="https://img.shields.io/twitter/follow/Moose_Said.svg?style=social" />
   </a>
 </p>
 
@@ -21,7 +21,7 @@
 
 👤 **Mostafa Said**
 
-- Twitter: [Moose_Said](https://twitter.com/Moose_Said)
+- Twitter: [@Moose_Said](https://twitter.com/Moose_Said)
 - Github: [@MooseSaeed](https://github.com/MooseSaeed)
 - LinkedIn: [@moosesaid](https://linkedin.com/in/moosesaid)
 
