@@ -1,12 +1,14 @@
 <template>
-  <div class="lg:grid lg:grid-cols-3 flex flex-col justify-center items-center">
+  <div
+    class="lg:grid lg:grid-cols-3 flex flex-col justify-center items-center sm:mb-10"
+  >
     <h1
       class="col-span-3 my-5 mb-10 font-bold leading-tight text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate"
     >
       Live Transcription
     </h1>
 
-    <aside class="col-span-2 max-w-3xl justify-self-center self-center mx-14">
+    <aside class="col-span-2 max-w-3xl justify-self-center self-center mx-5">
       <Tipscard>
         <tr>
           <td>
@@ -40,7 +42,7 @@
       </Tipscard>
     </aside>
     <div
-      class="lg:my-0 my-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col justify-center items-center"
+      class="lg:my-0 mt-10 max-w-xl font-sans rounded-lg gap-5 flex flex-col justify-center items-center"
     >
       <div>
         <Recorder class="rounded-xl" />
