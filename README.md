@@ -21,7 +21,7 @@
 
 👤 **Mostafa Said**
 
-- Twitter: [@Moose_Said](https://twitter.com/Moose_Said)
+- Twitter: [Moose_Said](https://twitter.com/Moose_Said)
 - Github: [@MooseSaeed](https://github.com/MooseSaeed)
 - LinkedIn: [@moosesaid](https://linkedin.com/in/moosesaid)
 
