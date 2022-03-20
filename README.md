@@ -32,7 +32,7 @@
 - [Tailwind 3](https://github.com/tailwindlabs/tailwindcss)
 - [Lamejs](https://github.com/zhuker/lamejs)
 - [Vue Audio Visual](https://github.com/staskobzar/vue-audio-visual)
-- Hosted on [Netlify](https://www.netlify.com/)
+- Deployed on [Netlify](https://www.netlify.com/)
 
 ## Show your support
 
