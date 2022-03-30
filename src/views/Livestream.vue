@@ -47,7 +47,7 @@
           <div class="mt-2">
             <div class="flex flex-col items-center justify-between">
               <div
-                @click="insertStream"
+                @click="startTranscripting"
                 class="m-2 px-4 py-1 rounded-xl fill-current text-white font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate border-2 cursor-pointer"
               >
                 This one
@@ -74,8 +74,10 @@
                 <option value="nl">Dutch</option>
               </select>
               <input
+                id="url"
+                v-model="url"
+                type="url"
                 class="px-6 py-3 m-2 rounded-xl text-sm text-black w-full"
-                type="text"
                 placeholder="Paste audio stream link..."
               />
             </div>
@@ -132,7 +134,13 @@ export default {
     const errorMsg = ref(null);
     const errorMessage = ref(null);
 
-    const insertStream = () => {
+    const startTranscripting = () => {
+      const language = document.querySelector("select").value;
+      const socket = new WebSocket(
+        "wss://api.deepgram.com/v1/listen?language=" + language,
+        ["token", process.env.VUE_APP_DEEPGRAM_KEY]
+      );
+
       const input = document.querySelector("input").value;
 
       insertedStream.value = input;
@@ -143,41 +151,45 @@ export default {
         errorMessage.value = ERROR_MESSAGE;
       }
 
-      navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-        const mediaRecorder = new MediaRecorder(stream, {
-          mimeType: "audio/webm",
-        });
-
-        const language = document.querySelector("select").value;
-        const socket = new WebSocket(
-          "wss://api.deepgram.com/v1/listen?language=" + language,
-          ["token", process.env.VUE_APP_DEEPGRAM_KEY]
-        );
-
-        socket.onopen = () => {
-          mediaRecorder.addEventListener("dataavailable", (event) => {
-            socket.send(event.data);
+      socket.onopen = () => {
+        const url = insertedStream.value;
+        fetch(url)
+          .then((response) => response.body)
+          .then((body) => {
+            // use method to parse audio data
+            readAllChunks(body);
           });
+      };
 
-          mediaRecorder.start(250);
-        };
-
-        socket.onmessage = (message) => {
-          const received = JSON.parse(message.data);
-          const transcript = received.channel.alternatives[0].transcript;
-          if (transcript && received.is_final) {
-            document.querySelector("#transcript").textContent +=
-              transcript + " ";
+      async function readAllChunks(readableStream) {
+        const reader = readableStream.getReader();
+        const chunks = [];
+        let done, value;
+        while (!done) {
+          ({ value, done } = await reader.read());
+          socket.send(value);
+          if (done) {
+            return chunks;
           }
-        };
-      });
+          chunks.push(value);
+        }
+      }
+
+      // Put the transcript onto the screen in the #captions element
+      socket.onmessage = (message) => {
+        const received = JSON.parse(message.data);
+        const transcript = received.channel.alternatives[0].transcript;
+        if (transcript && received.is_final) {
+          document.querySelector("#transcript").textContent += transcript + " ";
+        }
+      };
     };
 
     return {
-      insertStream,
       insertedStream,
       errorMsg,
       errorMessage,
+      startTranscripting,
     };
   },
 };
