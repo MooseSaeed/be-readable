@@ -4,8 +4,8 @@
   <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">
     <img alt="License: apache--2 permissive license" src="https://img.shields.io/badge/License-apache--2 permissive license-yellow.svg" />
   </a>
-  <a href="https://twitter.com/Moose\_Said" target="_blank">
-    <img alt="Twitter: Moose\_Said" src="https://img.shields.io/twitter/follow/Moose\_Said.svg?style=social" />
+  <a href="https://twitter.com/Moose_Said" target="_blank">
+    <img alt="Twitter: Moose_Said" src="https://img.shields.io/twitter/follow/Moose_Said.svg?style=social" />
   </a>
 </p>
 
