@@ -156,7 +156,6 @@ export default {
         fetch(url)
           .then((response) => response.body)
           .then((body) => {
-            // use method to parse audio data
             readAllChunks(body);
           });
       };
@@ -175,7 +174,6 @@ export default {
         }
       }
 
-      // Put the transcript onto the screen in the #captions element
       socket.onmessage = (message) => {
         const received = JSON.parse(message.data);
         const transcript = received.channel.alternatives[0].transcript;
