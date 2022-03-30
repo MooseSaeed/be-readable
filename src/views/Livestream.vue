@@ -31,11 +31,6 @@
         <tr>
           <li>Allow browser to use your microphone.</li>
         </tr>
-        <tr>
-          <li>
-            For this to work, you'll need a speaker to be the source of audio.
-          </li>
-        </tr>
       </Tipscard>
     </aside>
     <div
