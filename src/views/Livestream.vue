@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <p class="bg-gray-800/50 text-center inline-block text-xs">
-            http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
+            https://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk
           </p>
         </tr>
         <tr>
