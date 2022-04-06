@@ -115,6 +115,8 @@ export default {
       mediaNotSupported: false,
       visualizeAudio: false,
       lang: "",
+      socket: null,
+      stream: null,
     };
   },
 
@@ -179,6 +181,7 @@ export default {
 
     startTranscript() {
       navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+        this.stream = stream;
         const mediaRecorder = new MediaRecorder(stream, {
           mimeType: "audio/webm",
         });
@@ -189,6 +192,8 @@ export default {
           "wss://api.deepgram.com/v1/listen?language=" + language,
           ["token", process.env.VUE_APP_DEEPGRAM_KEY]
         );
+
+        this.socket = socket;
 
         socket.onopen = () => {
           mediaRecorder.addEventListener("dataavailable", (event) => {
@@ -211,6 +216,10 @@ export default {
 
     stopRecording() {
       this.recorder.stop();
+      this.socket.close;
+      this.stream.getTracks().forEach(function (track) {
+        track.stop();
+      });
       const recordList = this.recorder.recordList();
       this.recordedAudio = recordList[0].url;
       this.recordedBlob = recordList[0].blob;
